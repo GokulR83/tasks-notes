@@ -1,0 +1,57 @@
+.create-task {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.task-heading {
+  padding-top: 30px;
+}
+.task {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 15px;
+}
+.task input {
+  width: 300px;
+  border: none;
+  outline: none;
+  border-bottom: 2px solid white;
+  background-color: transparent;
+}
+.priority,
+.progress {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 15px;
+}
+.priority select,
+.progress select {
+  appearance: none;
+  outline: 10px red;
+  border: 2px solid white;
+  box-shadow: none;
+  border-radius: 8px;
+  color: black;
+  background-color: white;
+  width: 300px;
+  padding: 6px 10px;
+  background-image: none;
+  cursor: pointer;
+}
+.create-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+}
+.create-btn button {
+  padding: 8px 40px;
+}
+.create-btn button:hover {
+  background-color: rgb(58, 58, 59);
+}

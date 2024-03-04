@@ -1,0 +1,13 @@
+.task textarea{
+    appearance: none;
+  outline: 10px red;
+  border: 2px solid white;
+  box-shadow: none;
+  border-radius: 8px;
+  color: black;
+  background-color: white;
+  width: 300px;
+  padding: 6px 10px;
+  background-image: none;
+  cursor: pointer;
+}

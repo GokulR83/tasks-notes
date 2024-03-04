@@ -1,0 +1,41 @@
+.all-notes {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: space-between;
+  margin-top: 10px;
+  margin-bottom: 100px;
+}
+.single-item {
+  display: flex;
+  padding: 30px;
+  flex-direction: column;
+  border: 2px solid red;
+  border-radius: 18px;
+  justify-content: space-between;
+}
+.title-tag {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.note-tag {
+  background-color: crimson;
+}
+.tag-note {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+}
+.date-link {
+  display: flex;
+  justify-content: space-between;
+}
+.desc p {
+  /* max-width: 450px; */
+}
+.links img {
+  cursor: pointer;
+}

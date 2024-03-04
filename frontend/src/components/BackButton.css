@@ -1,0 +1,14 @@
+.back-btn {
+  width: fit-content;
+  padding: 10px 30px;
+  background-color: white;
+  border: none;
+  border-radius: 28px;
+  cursor: pointer;
+}
+.btn-link {
+  text-decoration: none;
+  outline: none;
+  border: none;
+  color: black;
+}
