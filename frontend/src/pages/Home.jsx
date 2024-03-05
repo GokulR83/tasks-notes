@@ -7,7 +7,7 @@ import TaskCard from "../components/home/TaskCard";
 import NoteCard from "../components/home/NoteCard";
 import { Link } from "react-router-dom";
 const url = import.meta.env.VITE_MAIN_URL;
-
+console.log(url)
 const Home = () => {
   const [task, setTask ] = useState([]);
   const [ note, setNote ] = useState([]);
