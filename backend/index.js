@@ -8,11 +8,12 @@ const cors = require("cors")
 //? Creating Instance of Express
 const app = express();
 //* option 1 : Allow all origin with Default of Cors
-app.use(cors({
-    origin: "https://tasks-notes.vercel.app/",
-    methods: ["POST","GET","PUT","DELETE"],
-    credentials: true
-}));
+app.use(cors());
+// app.use(cors({
+//     origin: "https://tasks-notes.vercel.app/",
+//     methods: ["POST","GET","PUT","DELETE"],
+//     credentials: true
+// }));
 //? Connect The .env file
 dotenv.config();
 
