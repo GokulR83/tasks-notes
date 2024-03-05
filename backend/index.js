@@ -8,7 +8,11 @@ const cors = require("cors")
 //? Creating Instance of Express
 const app = express();
 //* option 1 : Allow all origin with Default of Cors
-app.use(cors());
+app.use(cors({
+    origin: "https://tasks-notes.vercel.app/",
+    methods: ["POST","GET","PUT","DELETE"],
+    credentials: true
+}));
 //? Connect The .env file
 dotenv.config();
 
@@ -29,10 +33,11 @@ app.use("/task",taskRoute);
 //? Use the note route
 app.use("/note",noteRoute);
 
-
-
-
-
+app.get('*',(req,res)=>{
+  res.status(200).json({
+    message:'bad request'
+  })
+})
 
 //? Connecting the Database
 connectDB(database_url);

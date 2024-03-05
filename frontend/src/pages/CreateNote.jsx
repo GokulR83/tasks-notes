@@ -10,6 +10,7 @@ const CreateNote = () => {
   const [ notes, setNotes ] = useState({ note:"", description:"", tags:"personal" });
   const [ loading, setLoading ] = useState(false);
   const navigate = useNavigate();
+  const url = import.meta.env.VITE_MAIN_URL;
   const handleSubmit = () =>{
     if(notes.note ===""){
       alert("Enter the All Required Field");
@@ -17,7 +18,7 @@ const CreateNote = () => {
     else{
       setLoading(true);
       console.log(notes);
-      axios.post("http://localhost:8000/note/",notes)
+      axios.post(`${url}/note/`,notes)
       .then(()=>{
         setLoading(false);
         navigate("/");

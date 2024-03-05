@@ -11,9 +11,11 @@ const EditNote = () => {
   const [ loading, setLoading ] = useState(false);
   const navigate = useNavigate();
   const { id } = useParams();
+  const url = import.meta.env.VITE_MAIN_URL;
+
   useEffect(()=>{
     setLoading(true)
-    axios.get(`http://localhost:8000/note/${id}`)
+    axios.get(`${url}/note/${id}`)
     .then((res)=>{
       setLoading(false);
       setNotes(res.data)
@@ -31,7 +33,7 @@ const EditNote = () => {
     else{
       setLoading(true);
       console.log(notes);
-      axios.put(`http://localhost:8000/note/${id}`,notes)
+      axios.put(`${url}/note/${id}`,notes)
       .then(()=>{
         setLoading(false);
         navigate("/");

@@ -11,8 +11,10 @@ const EditTask = () => {
   const [ loading, setLoading ] = useState(false);
   const navigate = useNavigate();
   const { id } = useParams();
+  const url = import.meta.env.VITE_MAIN_URL;
+
   useEffect(()=>{
-    axios.get(`http://localhost:8000/task/${id}`)
+    axios.get(`${url}/task/${id}`)
     .then((res)=>{
       console.log(res.data);
       setTasks(res.data);
@@ -27,7 +29,7 @@ const EditTask = () => {
     }
     else{
       setLoading(true);
-      axios.put(`http://localhost:8000/task/${id}`,tasks)
+      axios.put(`${url}/task/${id}`,tasks)
       .then(()=>{
         setLoading(false);
         navigate("/");

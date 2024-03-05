@@ -10,13 +10,15 @@ const CreateTask = () => {
   const [ tasks, setTasks ] = useState({ task:"", priority:"high", progress:"incompleted" });
   const [ loading, setLoading ] = useState(false);
   const navigate = useNavigate();
+  const url = import.meta.env.VITE_MAIN_URL;
+
   const handleSubmit = () =>{
     if(tasks.task ===""){
       alert("Enter the All Required Field");
     }
     else{
       setLoading(true);
-      axios.post("http://localhost:8000/task/",tasks)
+      axios.post(`${url}/task/`,tasks)
       .then(()=>{
         setLoading(false);
         navigate("/");

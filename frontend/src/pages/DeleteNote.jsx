@@ -6,9 +6,11 @@ const DeleteNote = () => {
   const [ loading, setLoading ] = useState(false);
   const { id } = useParams();
   const navigate = useNavigate();
+  const url = import.meta.env.VITE_MAIN_URL;
+
   useEffect(()=>{
     setLoading(true);
-    axios.delete(`http://localhost:8000/note/${id}`)
+    axios.delete(`${url}/note/${id}`)
     .then(()=>{
       setLoading(false)
         navigate("/");

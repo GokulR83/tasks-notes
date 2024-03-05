@@ -2,6 +2,9 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 import Spinner from "../components/Spinner";
+// import dotenv from 'dotenv';
+// dotenv.config();
+const url = import.meta.env.VITE_MAIN_URL;
 const CompletedTask = () => {
   const [ loading, setLoading ] = useState(false);
   const { id } = useParams();
@@ -9,13 +12,13 @@ const CompletedTask = () => {
   useEffect(()=>{
     setLoading(true);
     var data;
-    axios.get(`http://localhost:8000/task/${id}`)
+    axios.get(`${url}/task/${id}`)
     .then((res)=>{
       data = {task:res.data.task,
               priority: res.data.priority,
               progress: "completed"
       };
-      axios.put(`http://localhost:8000/task/${id}`,data)
+      axios.put(`${url}/task/${id}`,data)
       .then(()=>{
         console.log("Data Updated");
         navigate('/');

@@ -6,6 +6,8 @@ import Spinner from "../components/Spinner";
 import TaskCard from "../components/home/TaskCard";
 import NoteCard from "../components/home/NoteCard";
 import { Link } from "react-router-dom";
+const url = import.meta.env.VITE_MAIN_URL;
+
 const Home = () => {
   const [task, setTask ] = useState([]);
   const [ note, setNote ] = useState([]);
@@ -15,7 +17,7 @@ const Home = () => {
 
   useEffect(()=>{
     setLoading(true);
-    axios.get("http://localhost:8000/task")
+    axios.get(`${url}/task`)
     .then((res)=>{
       const data = res.data.data
       setTask(data);
@@ -25,7 +27,7 @@ const Home = () => {
       console.log(error);
       setLoading(false);
     })
-    axios.get("http://localhost:8000/note")
+    axios.get(`${url}/note`)
     .then((res)=>{
       setNote(res.data.data);
       setLoading(false)
@@ -35,7 +37,6 @@ const Home = () => {
       setLoading(false);
     })
   },[]);
-  var ans;
   const handleClick = (str) =>{
     if(str==="inprogress"){
       setProgress("inprogress");
